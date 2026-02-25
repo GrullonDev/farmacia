@@ -35,8 +35,8 @@ include('is_logged.php');
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
 		include 'barcode.php';
-		$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["codigo"],ENT_QUOTES)));
-		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
+		$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["codigo"])));
+		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"])));
 		$estado=intval($_POST['estado']);
                 $und_pro=intval($_POST['und_pro']);
 		$precio_venta=floatval($_POST['precio']);
@@ -47,10 +47,10 @@ include('is_logged.php');
                // $precio3=floatval($_POST['precio3']);
                 $tienda=$_SESSION['tienda'];
                 $cat_pro=floatval($_POST['cat_pro']);
-                $marca=mysqli_real_escape_string($con,(strip_tags($_POST["marca"],ENT_QUOTES)));
-                $modelo=mysqli_real_escape_string($con,(strip_tags($_POST["modelo"],ENT_QUOTES)));
-                $color=mysqli_real_escape_string($con,(strip_tags($_POST["color"],ENT_QUOTES)));
-                $barras=mysqli_real_escape_string($con,(strip_tags($_POST["barras"],ENT_QUOTES)));
+                $marca=mysqli_real_escape_string($con,(strip_tags($_POST["marca"])));
+                $modelo=mysqli_real_escape_string($con,(strip_tags($_POST["modelo"])));
+                $color=mysqli_real_escape_string($con,(strip_tags($_POST["color"])));
+                $barras=mysqli_real_escape_string($con,(strip_tags($_POST["barras"])));
                 if($barras*1>0 and strlen($barras)>=12){
                      barcode('codigos/'.$barras.'.png', $barras, 30, 'horizontal', 'code128', true);
                     

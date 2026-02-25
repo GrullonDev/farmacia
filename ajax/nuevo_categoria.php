@@ -14,8 +14,8 @@
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
 		
-		$nom_cat=mysqli_real_escape_string($con,(strip_tags($_POST["nom_cat"],ENT_QUOTES)));
-		$des_cat=mysqli_real_escape_string($con,(strip_tags($_POST["des_cat"],ENT_QUOTES)));
+		$nom_cat=mysqli_real_escape_string($con,(strip_tags($_POST["nom_cat"])));
+		$des_cat=mysqli_real_escape_string($con,(strip_tags($_POST["des_cat"])));
 		$sql="INSERT INTO categorias (nom_cat, des_cat) VALUES ('$nom_cat','$des_cat')";
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){

@@ -11,9 +11,9 @@
 		require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 		require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
 		// escaping, additionally removing everything that could be (html/javascript-) code
-		$nombre=trim(mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES))));
-		$doc=mysqli_real_escape_string($con,(strip_tags($_POST["doc"],ENT_QUOTES)));
-                $tipo=mysqli_real_escape_string($con,(strip_tags($_POST["tipo"],ENT_QUOTES)));
+		$nombre=trim(mysqli_real_escape_string($con,(strip_tags($_POST["nombre"]))));
+		$doc=mysqli_real_escape_string($con,(strip_tags($_POST["doc"])));
+                $tipo=mysqli_real_escape_string($con,(strip_tags($_POST["tipo"])));
                 if($tipo==2){
                     $doc1=$doc;
                     $dni=0;
@@ -23,17 +23,17 @@
                     $dni=$doc;
                 }
                 $documento=$doc;
-                $ven=mysqli_real_escape_string($con,(strip_tags($_POST["ven"],ENT_QUOTES)));
+                $ven=mysqli_real_escape_string($con,(strip_tags($_POST["ven"])));
                 
                 
-                $telefono=mysqli_real_escape_string($con,(strip_tags($_POST["telefono"],ENT_QUOTES)));
-		$email=mysqli_real_escape_string($con,(strip_tags($_POST["email"],ENT_QUOTES)));
-		$direccion=mysqli_real_escape_string($con,(strip_tags($_POST["direccion"],ENT_QUOTES)));
+                $telefono=mysqli_real_escape_string($con,(strip_tags($_POST["telefono"])));
+		$email=mysqli_real_escape_string($con,(strip_tags($_POST["email"])));
+		$direccion=mysqli_real_escape_string($con,(strip_tags($_POST["direccion"])));
 		
-                $departamento=mysqli_real_escape_string($con,(strip_tags($_POST["departamento"],ENT_QUOTES)));
-                $provincia=mysqli_real_escape_string($con,(strip_tags($_POST["provincia"],ENT_QUOTES)));
-                $distrito=mysqli_real_escape_string($con,(strip_tags($_POST["distrito"],ENT_QUOTES)));
-                $cuenta=mysqli_real_escape_string($con,(strip_tags($_POST["cuenta"],ENT_QUOTES)));
+                $departamento=mysqli_real_escape_string($con,(strip_tags($_POST["departamento"])));
+                $provincia=mysqli_real_escape_string($con,(strip_tags($_POST["provincia"])));
+                $distrito=mysqli_real_escape_string($con,(strip_tags($_POST["distrito"])));
+                $cuenta=mysqli_real_escape_string($con,(strip_tags($_POST["cuenta"])));
                 
               
                 $tienda1=$_SESSION['tienda'];

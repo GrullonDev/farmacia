@@ -145,7 +145,7 @@ clear: right;
 	require_once ("../config/conexion.php");
 	$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
 	if($action == 'ajax'){
-         $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
+         $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
 		 $aColumns = array('codigo_producto', 'nombre_producto');
 		 $sTable = "products,und";
 		$sWhere="";

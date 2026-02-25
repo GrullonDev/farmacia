@@ -19,9 +19,9 @@ border-bottom: 2px solid #A9E2F3;
 	if (isset($_GET['id'])){	
 	}
 	if($action == 'ajax'){
-                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-                $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'], ENT_QUOTES)));
-                $q3 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q3'], ENT_QUOTES)));
+                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
+                $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'])));
+                $q3 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q3'])));
 		$sTable = "asistencia,users";
 		$sWhere = "";
                 $sWhere.=" WHERE users.sucursal=$tienda1 and asistencia.asistencia=0 and asistencia.user_id=users.user_id ";

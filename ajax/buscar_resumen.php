@@ -119,8 +119,8 @@ tfoot {
 	}
 	if($action == 'ajax'){
 		// escaping, additionally removing everything that could be (html/javascript-) code
-                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-                $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'], ENT_QUOTES)));
+                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
+                $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'])));
 		$sTable = "resumen_documentos";
 		$sWhere = "";
 		$sWhere.=" WHERE id_resumen>0";

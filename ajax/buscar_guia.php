@@ -118,9 +118,9 @@ tfoot {
 	}
 	if($action == 'ajax'){
 		// escaping, additionally removing everything that could be (html/javascript-) code
-                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-                $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'], ENT_QUOTES)));
-                $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'], ENT_QUOTES)));
+                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
+                $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'])));
+                $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'])));
 		$sTable = "facturas, clientes, guia";
 		$sWhere = "";
 		$sWhere.=" WHERE guia.guia>0 and facturas.id_cliente=clientes.id_cliente and facturas.tienda=$tienda1 and facturas.ven_com=1 and facturas.estado_factura=1 and facturas.id_factura=guia.id_doc";

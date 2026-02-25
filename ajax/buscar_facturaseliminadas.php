@@ -121,9 +121,9 @@ tfoot {
         $fecha1  = date("Y-m-d H:i:s");
 	$action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
 	if($action == 'ajax'){
-                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-                $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'], ENT_QUOTES)));
-                $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'], ENT_QUOTES)));
+                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
+                $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'])));
+                $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'])));
 		$sTable = "facturas, clientes, users";
 		$sWhere = "";
 		$sWhere.=" WHERE facturas.id_cliente=clientes.id_cliente and facturas.tienda=$tienda1 and facturas.id_vendedor=users.user_id and facturas.ven_com=1 and facturas.estado_factura<8 and facturas.activo=0 and facturas.numero_factura>0";

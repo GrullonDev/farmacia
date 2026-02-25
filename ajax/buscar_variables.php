@@ -45,7 +45,7 @@ border-bottom: 2px solid #A9E2F3;
 		}	
 	}
 	if($action == 'ajax'){
-         $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
+         $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
 		 $aColumns = array('variables','cod_var','des_var');//Columnas de busqueda
 		 $sTable = "laborales";
 		 $sWhere = "";

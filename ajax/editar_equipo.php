@@ -10,7 +10,7 @@
 		){
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
-		$equipo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_equipo"],ENT_QUOTES)));
+		$equipo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_equipo"])));
     $id_equipo=$_POST['mod_id'];
 		$sql="UPDATE tipo SET tipo='".$equipo."' WHERE id_tipo='".$id_equipo."'";
 		$query_update = mysqli_query($con,$sql);

@@ -42,12 +42,12 @@
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
 		include 'barcode.php';
-		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"],ENT_QUOTES)));
-                $codigo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_codigo"],ENT_QUOTES)));
-                $contiene=mysqli_real_escape_string($con,(strip_tags($_POST["mod_contiene"],ENT_QUOTES)));
-                $pts=mysqli_real_escape_string($con,(strip_tags($_POST["mod_puntos"],ENT_QUOTES)));
-                $barras=mysqli_real_escape_string($con,(strip_tags($_POST["mod_barras"],ENT_QUOTES)));
-                $min=mysqli_real_escape_string($con,(strip_tags($_POST["mod_min"],ENT_QUOTES)));
+		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"])));
+                $codigo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_codigo"])));
+                $contiene=mysqli_real_escape_string($con,(strip_tags($_POST["mod_contiene"])));
+                $pts=mysqli_real_escape_string($con,(strip_tags($_POST["mod_puntos"])));
+                $barras=mysqli_real_escape_string($con,(strip_tags($_POST["mod_barras"])));
+                $min=mysqli_real_escape_string($con,(strip_tags($_POST["mod_min"])));
                 $estado=intval($_POST['mod_status']);
                 $mon_costo=1;
                 $mon_venta=1;

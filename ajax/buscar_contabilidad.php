@@ -55,13 +55,13 @@ border-bottom: 2px solid #A9E2F3;
 	
 	if($action == 'ajax'){
 		// escaping, additionally removing everything that could be (html/javascript-) code
-                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-                $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'], ENT_QUOTES)));
-                $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'], ENT_QUOTES)));
-                $q3 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q3'], ENT_QUOTES)));
-                $q4 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q4'], ENT_QUOTES)));
-                $q5 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q5'], ENT_QUOTES)));
-                $q6 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q6'], ENT_QUOTES)));
+                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
+                $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'])));
+                $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'])));
+                $q3 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q3'])));
+                $q4 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q4'])));
+                $q5 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q5'])));
+                $q6 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q6'])));
                 if($q4=="3"){
                     if($q5=="1"){
                         $text2="and ((facturas.ven_com=1 or facturas.ven_com=2) and facturas.estado_factura=1) ";

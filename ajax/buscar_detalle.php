@@ -25,11 +25,11 @@ border-bottom: 2px solid #A9E2F3;
 
 	if($action == 'ajax'){
 		// escaping, additionally removing everything that could be (html/javascript-) code
-                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-                $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'], ENT_QUOTES)));
-                $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'], ENT_QUOTES)));
-                $q3 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q3'], ENT_QUOTES)));
-                $q4 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q4'], ENT_QUOTES)));
+                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
+                $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'])));
+                $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'])));
+                $q3 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q3'])));
+                $q4 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q4'])));
 		$sTable = "detalle_factura, clientes, users";
 		$sWhere = "";
 		$sWhere.=" WHERE detalle_factura.id_cliente=clientes.id_cliente and detalle_factura.tienda=$tienda1 and detalle_factura.id_vendedor=users.user_id and detalle_factura.ven_com<=2 and detalle_factura.tipo_doc<=3 and detalle_factura.activo=1 and detalle_factura.numero_factura>=0";

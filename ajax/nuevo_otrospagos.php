@@ -7,17 +7,17 @@
 		
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
-		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
-                $ven_com=mysqli_real_escape_string($con,(strip_tags($_POST["ven_com"],ENT_QUOTES)));
-                $cliente=mysqli_real_escape_string($con,(strip_tags($_POST["cliente"],ENT_QUOTES)));
+		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"])));
+                $ven_com=mysqli_real_escape_string($con,(strip_tags($_POST["ven_com"])));
+                $cliente=mysqli_real_escape_string($con,(strip_tags($_POST["cliente"])));
 		$rr=2;
-                //$vendedor=mysqli_real_escape_string($con,(strip_tags($_POST["vendedor"],ENT_QUOTES)));
-                $condiciones=mysqli_real_escape_string($con,(strip_tags($_POST["condiciones"],ENT_QUOTES)));
-                $pago=mysqli_real_escape_string($con,(strip_tags($_POST["pago"],ENT_QUOTES)));
-                $estado_factura=mysqli_real_escape_string($con,(strip_tags($_POST["estado_factura"],ENT_QUOTES)));
-                $numero_factura=mysqli_real_escape_string($con,(strip_tags($_POST["numero_factura"],ENT_QUOTES)));
-                $obs=mysqli_real_escape_string($con,(strip_tags($_POST["obs"],ENT_QUOTES)));
-                $motivo=mysqli_real_escape_string($con,(strip_tags($_POST["motivo"],ENT_QUOTES)));
+                //$vendedor=mysqli_real_escape_string($con,(strip_tags($_POST["vendedor"])));
+                $condiciones=mysqli_real_escape_string($con,(strip_tags($_POST["condiciones"])));
+                $pago=mysqli_real_escape_string($con,(strip_tags($_POST["pago"])));
+                $estado_factura=mysqli_real_escape_string($con,(strip_tags($_POST["estado_factura"])));
+                $numero_factura=mysqli_real_escape_string($con,(strip_tags($_POST["numero_factura"])));
+                $obs=mysqli_real_escape_string($con,(strip_tags($_POST["obs"])));
+                $motivo=mysqli_real_escape_string($con,(strip_tags($_POST["motivo"])));
                 $moneda=1;
                 $tienda=$_SESSION['tienda'];
                 $vendedor=$_SESSION['user_id'];

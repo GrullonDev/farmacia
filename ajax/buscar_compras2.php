@@ -124,9 +124,9 @@ border-bottom: 2px solid #A9E2F3;
 		}
 	}
 	if($action == 'ajax'){
-        $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-        $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'], ENT_QUOTES)));
-        $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'], ENT_QUOTES)));
+        $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
+        $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'])));
+        $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'])));
         
 		$sTable = "facturas, users";
 		$sWhere = "";

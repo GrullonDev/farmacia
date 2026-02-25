@@ -7,8 +7,8 @@
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
 
-		$id_lab=mysqli_real_escape_string($con,(strip_tags($_POST["mod_id_laboratorio"],ENT_QUOTES)));
-    $nom_lab=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nom_laboratorio"],ENT_QUOTES)));
+		$id_lab=mysqli_real_escape_string($con,(strip_tags($_POST["mod_id_laboratorio"])));
+    $nom_lab=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nom_laboratorio"])));
 
     if(!is_numeric($nom_lab)) {
 		$sql="UPDATE laboratorio SET nom_laboratorio='".$nom_lab."' WHERE id_laboratorio='".$id_lab."' ";

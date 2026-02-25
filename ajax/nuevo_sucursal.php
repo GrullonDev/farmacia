@@ -12,16 +12,16 @@
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
 
-		$nombre=trim(mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES))));
-		$ruc=trim(mysqli_real_escape_string($con,(strip_tags($_POST["ruc"],ENT_QUOTES))));
-		$direccion=trim(mysqli_real_escape_string($con,(strip_tags($_POST["direccion"],ENT_QUOTES))));
-    $correo=mysqli_real_escape_string($con,(strip_tags($_POST["correo"],ENT_QUOTES)));
-    $telefono=mysqli_real_escape_string($con,(strip_tags($_POST["telefono"],ENT_QUOTES)));
-    $departamento=trim(mysqli_real_escape_string($con,(strip_tags($_POST["departamento"],ENT_QUOTES))));
-    $provincia=trim(mysqli_real_escape_string($con,(strip_tags($_POST["provincia"],ENT_QUOTES))));
-    $distrito=trim(mysqli_real_escape_string($con,(strip_tags($_POST["distrito"],ENT_QUOTES))));
-    $ubigeo=mysqli_real_escape_string($con,(strip_tags($_POST["ubigeo"],ENT_QUOTES)));
-    $descripcion=mysqli_real_escape_string($con,(strip_tags($_POST["descripcion"],ENT_QUOTES)));
+		$nombre=trim(mysqli_real_escape_string($con,(strip_tags($_POST["nombre"]))));
+		$ruc=trim(mysqli_real_escape_string($con,(strip_tags($_POST["ruc"]))));
+		$direccion=trim(mysqli_real_escape_string($con,(strip_tags($_POST["direccion"]))));
+    $correo=mysqli_real_escape_string($con,(strip_tags($_POST["correo"])));
+    $telefono=mysqli_real_escape_string($con,(strip_tags($_POST["telefono"])));
+    $departamento=trim(mysqli_real_escape_string($con,(strip_tags($_POST["departamento"]))));
+    $provincia=trim(mysqli_real_escape_string($con,(strip_tags($_POST["provincia"]))));
+    $distrito=trim(mysqli_real_escape_string($con,(strip_tags($_POST["distrito"]))));
+    $ubigeo=mysqli_real_escape_string($con,(strip_tags($_POST["ubigeo"])));
+    $descripcion=mysqli_real_escape_string($con,(strip_tags($_POST["descripcion"])));
 
     $tienda=mysqli_query($con,"select * from sucursal ORDER BY  `sucursal`.`tienda` DESC ");
     $row1=mysqli_fetch_array($tienda);

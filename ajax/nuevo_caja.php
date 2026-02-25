@@ -8,11 +8,11 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 		require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
 		// escaping, additionally removing everything that could be (html/javascript-) code
-		$inicio=mysqli_real_escape_string($con,(strip_tags($_POST["inicio"],ENT_QUOTES)));
-		$fecha=mysqli_real_escape_string($con,(strip_tags($_POST["fecha"],ENT_QUOTES)));
+		$inicio=mysqli_real_escape_string($con,(strip_tags($_POST["inicio"])));
+		$fecha=mysqli_real_escape_string($con,(strip_tags($_POST["fecha"])));
                 date_default_timezone_set('America/Lima');
                 $fecha4=date("Y-m-d H:i:s");
-                $user_id=mysqli_real_escape_string($con,(strip_tags($_POST["mod_usuario"],ENT_QUOTES)));
+                $user_id=mysqli_real_escape_string($con,(strip_tags($_POST["mod_usuario"])));
                 $tienda=$_SESSION['tienda'];
 		
                 $consulta9 = "SELECT * FROM caja WHERE DATE_FORMAT(fecha, '%Y-%m-%d')='$fecha' and tienda=$tienda and usuario_inicio=$user_id ";

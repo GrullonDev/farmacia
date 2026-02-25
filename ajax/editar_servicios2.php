@@ -11,9 +11,9 @@
 		){
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
-		$com_ser=mysqli_real_escape_string($con,(strip_tags($_POST["mod_com_ser"],ENT_QUOTES)));
-		$estado=mysqli_real_escape_string($con,(strip_tags($_POST["mod_estado"],ENT_QUOTES)));
-		$cancelado=mysqli_real_escape_string($con,(strip_tags($_POST["mod_cancelado"],ENT_QUOTES)));
+		$com_ser=mysqli_real_escape_string($con,(strip_tags($_POST["mod_com_ser"])));
+		$estado=mysqli_real_escape_string($con,(strip_tags($_POST["mod_estado"])));
+		$cancelado=mysqli_real_escape_string($con,(strip_tags($_POST["mod_cancelado"])));
 		$id_servicio=intval($_POST['mod_id']);
 		$sql="UPDATE servicio SET com_ser='".$com_ser."', ter_ser='".$estado."', cancelado='".$cancelado."' WHERE id_servicio='".$id_servicio."'";
 		$query_update = mysqli_query($con,$sql);

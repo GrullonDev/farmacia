@@ -12,8 +12,8 @@
 		){
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
-		$nombre_producto=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"],ENT_QUOTES)));
-		$codigo_producto=mysqli_real_escape_string($con,(strip_tags($_POST["mod_codigo"],ENT_QUOTES)));
+		$nombre_producto=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"])));
+		$codigo_producto=mysqli_real_escape_string($con,(strip_tags($_POST["mod_codigo"])));
                 $id_producto=$_POST['mod_id'];
 		$sql="UPDATE products SET nombre_producto='".$nombre_producto."',codigo_producto='".$codigo_producto."'WHERE id_producto='".$id_producto."'";
 		$query_update = mysqli_query($con,$sql);

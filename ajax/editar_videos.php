@@ -15,10 +15,10 @@
 		require_once ("../config/conexion.php");
 		
                 
-                $menu=mysqli_real_escape_string($con,(strip_tags($_POST["mod_menu"],ENT_QUOTES)));
-                $submenu=mysqli_real_escape_string($con,(strip_tags($_POST["mod_submenu"],ENT_QUOTES)));
-                $descripcion=mysqli_real_escape_string($con,(strip_tags($_POST["mod_descripcion"],ENT_QUOTES)));
-                $video=mysqli_real_escape_string($con,(strip_tags($_POST["mod_video"],ENT_QUOTES)));
+                $menu=mysqli_real_escape_string($con,(strip_tags($_POST["mod_menu"])));
+                $submenu=mysqli_real_escape_string($con,(strip_tags($_POST["mod_submenu"])));
+                $descripcion=mysqli_real_escape_string($con,(strip_tags($_POST["mod_descripcion"])));
+                $video=mysqli_real_escape_string($con,(strip_tags($_POST["mod_video"])));
                
 		$id_video=intval($_POST['mod_id']);
 		$sql="UPDATE video SET menu='".$menu."', submenu='".$submenu."',descripcion='".$descripcion."', video='".$video."' WHERE id_video='".$id_video."'";

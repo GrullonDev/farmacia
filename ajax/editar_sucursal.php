@@ -11,17 +11,17 @@
 		){
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
-		$nombre=trim(mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"],ENT_QUOTES))));
-		$ruc=trim(mysqli_real_escape_string($con,(strip_tags($_POST["mod_ruc"],ENT_QUOTES))));
-		$direccion=trim(mysqli_real_escape_string($con,(strip_tags($_POST["mod_direccion"],ENT_QUOTES))));
-    $correo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_correo"],ENT_QUOTES)));
-    $telefono=mysqli_real_escape_string($con,(strip_tags($_POST["mod_telefono"],ENT_QUOTES)));
-    $ubigeo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_ubigeo"],ENT_QUOTES)));
+		$nombre=trim(mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"]))));
+		$ruc=trim(mysqli_real_escape_string($con,(strip_tags($_POST["mod_ruc"]))));
+		$direccion=trim(mysqli_real_escape_string($con,(strip_tags($_POST["mod_direccion"]))));
+    $correo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_correo"])));
+    $telefono=mysqli_real_escape_string($con,(strip_tags($_POST["mod_telefono"])));
+    $ubigeo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_ubigeo"])));
 
-    $departamento=trim(mysqli_real_escape_string($con,(strip_tags($_POST["mod_departamento"],ENT_QUOTES))));
-    $provincia=trim(mysqli_real_escape_string($con,(strip_tags($_POST["mod_provincia"],ENT_QUOTES))));
-    $distrito=trim(mysqli_real_escape_string($con,(strip_tags($_POST["mod_distrito"],ENT_QUOTES))));
-		$descripcion=trim(mysqli_real_escape_string($con,(strip_tags($_POST["mod_descripcion"],ENT_QUOTES))));
+    $departamento=trim(mysqli_real_escape_string($con,(strip_tags($_POST["mod_departamento"]))));
+    $provincia=trim(mysqli_real_escape_string($con,(strip_tags($_POST["mod_provincia"]))));
+    $distrito=trim(mysqli_real_escape_string($con,(strip_tags($_POST["mod_distrito"]))));
+		$descripcion=trim(mysqli_real_escape_string($con,(strip_tags($_POST["mod_descripcion"]))));
 
 		$id_sucursal=$_POST['mod_id'];
 		$sql="UPDATE sucursal SET nombre='".$nombre."',ruc='".$ruc."',dep_suc='".$departamento."',pro_suc='".$provincia."',dis_suc='".$distrito."',direccion='".$direccion."',correo='".$correo."',telefono='".$telefono."',ubigeo='".$ubigeo."', descripcion_sucursal='".$descripcion."' WHERE id_sucursal='".$id_sucursal."'";

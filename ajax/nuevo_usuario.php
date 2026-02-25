@@ -27,9 +27,9 @@ include('is_logged.php');
         ) {
             require_once ("../config/db.php");
             require_once ("../config/conexion.php");
-    $firstname = trim(mysqli_real_escape_string($con,(strip_tags($_POST["firstname"],ENT_QUOTES))));
-		$user_name = trim(mysqli_real_escape_string($con,(strip_tags($_POST["user_name"],ENT_QUOTES))));
-    $user_email = mysqli_real_escape_string($con,(strip_tags($_POST["user_email"],ENT_QUOTES)));
+    $firstname = trim(mysqli_real_escape_string($con,(strip_tags($_POST["firstname"]))));
+		$user_name = trim(mysqli_real_escape_string($con,(strip_tags($_POST["user_name"]))));
+    $user_email = mysqli_real_escape_string($con,(strip_tags($_POST["user_email"])));
 		$user_password = $_POST['user_password_new'];
     $dni = $_POST['dni'];
     $domicilio = $_POST['domicilio'];

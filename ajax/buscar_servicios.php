@@ -70,9 +70,9 @@ tfoot {
 		}
 	}
 	if($action == 'ajax'){
-		$q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-                $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'], ENT_QUOTES)));
-                $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'], ENT_QUOTES)));
+		$q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
+                $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'])));
+                $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'])));
                 $sTable = "detalle_factura, products,users";
 		$sWhere = "";
 		$sWhere.=" WHERE detalle_factura.id_producto=products.id_producto and detalle_factura.numero_factura=0 and users.user_id=detalle_factura.precio_compra";

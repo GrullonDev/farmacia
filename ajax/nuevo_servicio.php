@@ -16,7 +16,7 @@
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
 		$nom_servicio=$_POST["nom_servicio"];
-		$cod_servicio=mysqli_real_escape_string($con,(strip_tags($_POST["cod_servicio"],ENT_QUOTES)));
+		$cod_servicio=mysqli_real_escape_string($con,(strip_tags($_POST["cod_servicio"])));
                 $pre_servicio=floatval($_POST['pre_servicio']);
                 date_default_timezone_set('America/Lima');
                 $date_added=date("Y-m-d H:i:s");

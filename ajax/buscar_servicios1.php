@@ -152,7 +152,7 @@ require_once ("../config/conexion.php");//Contiene funcion que conecta a la base
 		}	
 	}
         if($action == 'ajax'){
-                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
+                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
 		$sTable = "servicio, clientes, users";
 		$sWhere = "";
 		$sWhere.=" WHERE servicio.id_cliente=clientes.id_cliente and servicio.user_id=users.user_id and servicio.ter_ser>=$g1 and servicio.ter_ser<=$g2 and servicio.tipo>=$f1 and servicio.entregado<=$e2 and servicio.entregado>=$e1 and servicio.reparado<=$d2 and servicio.reparado>=$d1 and servicio.tipo<=$f2 and servicio.activo=1 and servicio.tienda=$tienda1";

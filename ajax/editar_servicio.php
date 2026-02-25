@@ -25,8 +25,8 @@
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
 		
-		$nom_servicio=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nom_servicio"],ENT_QUOTES)));
-                $cod_servicio=mysqli_real_escape_string($con,(strip_tags($_POST["mod_cod_servicio"],ENT_QUOTES)));
+		$nom_servicio=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nom_servicio"])));
+                $cod_servicio=mysqli_real_escape_string($con,(strip_tags($_POST["mod_cod_servicio"])));
 		
 		$pre_servicio=floatval($_POST['mod_pre_servicio']);
                 

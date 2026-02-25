@@ -11,8 +11,8 @@
 		){
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
-		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
-		$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["codigo"],ENT_QUOTES)));
+		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"])));
+		$codigo=mysqli_real_escape_string($con,(strip_tags($_POST["codigo"])));
                 date_default_timezone_set('America/Lima');
                 $date_added=date("Y-m-d H:i:s");
 		$sql="INSERT INTO products (nombre_producto,codigo_producto,date_added,b1,b2,b3,pro_ser) VALUES ('$nombre','$codigo','$date_added','1','1','1','2')";
