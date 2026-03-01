@@ -13,10 +13,10 @@
 		){
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
-		$variables=mysqli_real_escape_string($con,(strip_tags($_POST["mod_variables"],ENT_QUOTES)));
-		$des_var=mysqli_real_escape_string($con,(strip_tags($_POST["mod_des_var"],ENT_QUOTES)));
-		$cod_var=mysqli_real_escape_string($con,(strip_tags($_POST["mod_cod_var"],ENT_QUOTES)));
-                $col_var=mysqli_real_escape_string($con,(strip_tags($_POST["mod_col_var"],ENT_QUOTES)));
+		$variables=mysqli_real_escape_string($con,(strip_tags($_POST["mod_variables"])));
+		$des_var=mysqli_real_escape_string($con,(strip_tags($_POST["mod_des_var"])));
+		$cod_var=mysqli_real_escape_string($con,(strip_tags($_POST["mod_cod_var"])));
+                $col_var=mysqli_real_escape_string($con,(strip_tags($_POST["mod_col_var"])));
 		$id_laboral=$_POST['mod_id'];
 		$sql="UPDATE laborales SET variables='".$variables."',des_var='".$des_var."' ,cod_var='".$cod_var."',col_var='".$col_var."' WHERE id_laboral='".$id_laboral."'";
 		$query_update = mysqli_query($con,$sql);

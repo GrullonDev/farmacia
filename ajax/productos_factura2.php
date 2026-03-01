@@ -6,7 +6,7 @@
         $tienda1=$_SESSION['tienda'];
 	$action = 0;
 	if($action == 0){
-         $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['barra'], ENT_QUOTES)));
+         $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['barra'])));
          
 		// $aColumns = array('codigo_producto', 'nombre_producto');
                         if($q>0){

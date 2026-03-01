@@ -10,8 +10,8 @@
 		){
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
-		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
-		$variable=mysqli_real_escape_string($con,(strip_tags($_POST["variable"],ENT_QUOTES)));
+		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"])));
+		$variable=mysqli_real_escape_string($con,(strip_tags($_POST["variable"])));
                 $fecha_entrada=$_POST["fecha_entrada"];
                 $unico=$nombre."-".$fecha_entrada;
                 $query=mysqli_query($con,"select * from asistencia where fecha_entrada='".$fecha_entrada."' and user_id='".$nombre."' ");

@@ -47,9 +47,9 @@
 	$query1=mysqli_query($con, "select * from datosempresa where id_emp=1");
         $row1=mysqli_fetch_array($query1);
         $alerta=$row1['alerta'];
-        $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-        $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'], ENT_QUOTES)));
-        $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'], ENT_QUOTES)));
+        $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
+        $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'])));
+        $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'])));
         //$aColumns = array('codigo_producto', 'nombre_producto');//Columnas de busqueda
         $sTable = "products";
         $sWhere = "WHERE id_producto>0";

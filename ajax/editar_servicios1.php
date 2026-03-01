@@ -11,18 +11,18 @@
 		
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
-		$com_ser=mysqli_real_escape_string($con,(strip_tags($_POST["mod_com_ser"],ENT_QUOTES)));
-                $fecha_reparado=mysqli_real_escape_string($con,(strip_tags($_POST["fecha_reparado"],ENT_QUOTES)));
-                $saliente=mysqli_real_escape_string($con,(strip_tags($_POST["saliente"],ENT_QUOTES)));
-                $desechado=mysqli_real_escape_string($con,(strip_tags($_POST["desechado"],ENT_QUOTES)));
-                $rep=mysqli_real_escape_string($con,(strip_tags($_POST["rep"],ENT_QUOTES)));
-                $ent=mysqli_real_escape_string($con,(strip_tags($_POST["ent"],ENT_QUOTES)));
-                $ter=mysqli_real_escape_string($con,(strip_tags($_POST["ter"],ENT_QUOTES)));
+		$com_ser=mysqli_real_escape_string($con,(strip_tags($_POST["mod_com_ser"])));
+                $fecha_reparado=mysqli_real_escape_string($con,(strip_tags($_POST["fecha_reparado"])));
+                $saliente=mysqli_real_escape_string($con,(strip_tags($_POST["saliente"])));
+                $desechado=mysqli_real_escape_string($con,(strip_tags($_POST["desechado"])));
+                $rep=mysqli_real_escape_string($con,(strip_tags($_POST["rep"])));
+                $ent=mysqli_real_escape_string($con,(strip_tags($_POST["ent"])));
+                $ter=mysqli_real_escape_string($con,(strip_tags($_POST["ter"])));
                 $reparado=intval($_POST['reparado']);
                 $entregado=intval($_POST['entregado']);
                 $id_reparado=intval($_POST['id_reparado']);
                 $id_entregado=intval($_POST['id_entregado']);
-                $ter_ser=mysqli_real_escape_string($con,(strip_tags($_POST["mod_ter_ser"],ENT_QUOTES)));
+                $ter_ser=mysqli_real_escape_string($con,(strip_tags($_POST["mod_ter_ser"])));
 		$user_id=$_SESSION['user_id'];
                 if($_POST['cerrado']==1 && $_SESSION['user_id']<>1){
                    $cerrado=1; 

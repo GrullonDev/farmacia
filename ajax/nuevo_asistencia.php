@@ -10,8 +10,8 @@
 		){
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
-		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));
-		$tipo_reg=mysqli_real_escape_string($con,(strip_tags($_POST["tipo_reg"],ENT_QUOTES)));
+		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["nombre"])));
+		$tipo_reg=mysqli_real_escape_string($con,(strip_tags($_POST["tipo_reg"])));
                 $porciones = explode("-", $nombre);
                 $nombre1= $porciones[0]; 
                 $hora= $porciones[1]; 

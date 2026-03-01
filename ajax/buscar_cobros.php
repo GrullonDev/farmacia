@@ -60,7 +60,7 @@ tfoot {
             }
 	}
 	if($action == 'ajax'){
-		$q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
+		$q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
                 $sTable = "clientes";
 		$sWhere = "WHERE clientes.id_cliente>0";
                 if ( $_GET['q'] != "" )

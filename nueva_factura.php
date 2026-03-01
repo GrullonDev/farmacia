@@ -300,8 +300,8 @@ if ($folio <> "" and $numero_factura > 0) {
 
 
   <script type="text/javascript">
-    $(document).ready(function() {
-      $('#subscribe').on('change', function() {
+    $(document).ready(function () {
+      $('#subscribe').on('change', function () {
         if (this.checked) {
           $("#cantidad_caja").show();
           $("#precio_cajaa").show();
@@ -314,32 +314,32 @@ if ($folio <> "" and $numero_factura > 0) {
   </script>
 
   <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
 
-      $(".busca").keyup(function() //se crea la funcioin keyup
+      $(".busca").keyup(function () //se crea la funcioin keyup
+      {
+        var texto = $(this).val(); //se recupera el valor de la caja de texto y se guarda en la variable texto
+        var dataString = 'palabra=' + texto; //se guarda en una variable nueva para posteriormente pasarla a search.php
+        if (texto == '') //si no tiene ningun valor la caja de texto no realiza ninguna accion
         {
-          var texto = $(this).val(); //se recupera el valor de la caja de texto y se guarda en la variable texto
-          var dataString = 'palabra=' + texto; //se guarda en una variable nueva para posteriormente pasarla a search.php
-          if (texto == '') //si no tiene ningun valor la caja de texto no realiza ninguna accion
-          {
-            $("#display").hide();
-            return false;
-          } else {
-            $.ajax({ //metodo ajax
-              type: "POST", //aqui puede  ser get o post
-              url: "search.php", //la url adonde se va a mandar la cadena a buscar
-              data: dataString,
-              cache: false,
-              success: function(html) //funcion que se activa al recibir un dato
-              {
-                $("#display").html(html).show(); // funcion jquery que muestra el div con identificador display, como formato html, tambien puede ser .text
-              }
-            });
-          }
+          $("#display").hide();
           return false;
-        });
+        } else {
+          $.ajax({ //metodo ajax
+            type: "POST", //aqui puede  ser get o post
+            url: "search.php", //la url adonde se va a mandar la cadena a buscar
+            data: dataString,
+            cache: false,
+            success: function (html) //funcion que se activa al recibir un dato
+            {
+              $("#display").html(html).show(); // funcion jquery que muestra el div con identificador display, como formato html, tambien puede ser .text
+            }
+          });
+        }
+        return false;
+      });
     });
-    jQuery(function($) { //funcion jquery que muestra el mensaje "Buscar amigos..." en la caja de texto
+    jQuery(function ($) { //funcion jquery que muestra el mensaje "Buscar amigos..." en la caja de texto
       $("#caja_busqueda").Watermark("Buscar producto...");
     });
   </script>
@@ -354,10 +354,10 @@ if ($folio <> "" and $numero_factura > 0) {
   $r = "nav-sm";
   //if($_GET['Ancho']<=400){
   //    $r="nav-md";
-
+  
   //}else{
   //    $r="nav-sm";
-
+  
   //}
   //print"$r";
   ?>
@@ -416,13 +416,14 @@ if ($folio <> "" and $numero_factura > 0) {
 
             include("modal/buscar_servicio.php");
             //include("modal/registro_clientes.php");
-
+            
             ?>
 
 
 
             <div class="row" style='color:black;'>
-              <div class="container" style="background-color: #CDDCDC; background-image: radial-gradient(at 50% 100%, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%); background-blend-mode: screen, overlay;">
+              <div class="container"
+                style="background-color: #CDDCDC; background-image: radial-gradient(at 50% 100%, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%); background-blend-mode: screen, overlay;">
 
                 <div style="background:#001394;padding:5px;margin:5px;border-radius: 7px;">
                   <font color="white" size="2"><strong>Facturaciòn electronica</strong></font>
@@ -433,21 +434,25 @@ if ($folio <> "" and $numero_factura > 0) {
 
                     <div class="col-md-2 col-sm-4 col-xs-12">Tipo documento
                       <select class='form-control cuadrosdetexto' id="tip_doc" name="tip_doc">
-                           <!-- <option value="1" <?php echo $s1; ?>><?php echo PN; ?></option> -->
-                        
+                        <!-- <option value="1" <?php echo $s1; ?>><?php echo PN; ?></option> -->
+
                         <option value="2" <?php echo $s2; ?>><?php echo PJ; ?></option>
                       </select>
                     </div>
 
                     <div class="col-md-2 col-sm-4 col-xs-12">Doc cliente
                       <div class="input-group">
-                        <input type="search" autocomplete="off" class="form-control cuadrosdetextocentro" name="doc1" id="doc1" placeholder="Dni/Ruc" value="<?php echo $documento; ?>" required>
-                        <span class="input-group-btn"><input type="button" class="btn btn-primary " id="btn-ingresar" value="Buscar..." /></span>
+                        <input type="search" autocomplete="off" class="form-control cuadrosdetextocentro" name="doc1"
+                          id="doc1" placeholder="Dni/Ruc" value="<?php echo $documento; ?>" required>
+                        <span class="input-group-btn"><input type="button" class="btn btn-primary " id="btn-ingresar"
+                            value="Buscar..." /></span>
                       </div>
                     </div>
 
                     <div class="col-md-8 col-sm-4 col-xs-12">Cliente
-                      <input type="search" minlength="10" class="form-control cuadrosdetextoderecha" name="nombre_cliente" id="nombre_cliente" placeholder="Nombre del cliente" value="<?php echo $nombre; ?>" required>
+                      <input type="search" minlength="10" class="form-control cuadrosdetextoderecha"
+                        name="nombre_cliente" id="nombre_cliente" placeholder="Nombre del cliente"
+                        value="<?php echo $nombre; ?>" required>
                       <input id="id_cliente" type='hidden'>
                     </div>
                   </div>
@@ -455,19 +460,23 @@ if ($folio <> "" and $numero_factura > 0) {
 
                   <div class="form-group row">
                     <div class="col-md-4 col-sm-4 col-xs-12">Dirección del cliente:
-                      <input type="text" autocomplete="off" class="form-control cuadrosdetexto" id="direccion_cliente" placeholder="Dirección del cliente" value="<?php echo $direccion; ?>">
+                      <input type="text" autocomplete="off" class="form-control cuadrosdetexto" id="direccion_cliente"
+                        placeholder="Dirección del cliente" value="<?php echo $direccion; ?>">
                     </div>
 
                     <div class="col-md-4 col-sm-4 col-xs-12">Observacion:
-                      <input type="text" autocomplete="off" class="form-control cuadrosdetextocentro" id="obs" placeholder="Observacion">
+                      <input type="text" autocomplete="off" class="form-control cuadrosdetextocentro" id="obs"
+                        placeholder="Observacion">
                     </div>
 
                     <div class="col-md-2 col-sm-4 col-xs-12">Teléfono
-                      <input type="text" autocomplete="off" class="form-control cuadrosdetextocentro" id="tel1" value="<?php echo $telefono; ?>" placeholder="Teléfono" size="12">
+                      <input type="text" autocomplete="off" class="form-control cuadrosdetextocentro" id="tel1"
+                        value="<?php echo $telefono; ?>" placeholder="Teléfono" size="12">
                     </div>
 
                     <div class="col-md-2 col-sm-4 col-xs-12"> Email
-                      <input type="text" autocomplete="off" class="form-control cuadrosdetextoderecha" id="mail" value="<?php echo $email; ?>" placeholder="Email">
+                      <input type="text" autocomplete="off" class="form-control cuadrosdetextoderecha" id="mail"
+                        value="<?php echo $email; ?>" placeholder="Email">
                     </div>
                   </div>
 
@@ -507,10 +516,13 @@ if ($folio <> "" and $numero_factura > 0) {
                     <input type="hidden" id="hora" value="<?php echo date("H:i:s"); ?>" required readonly>
                     <input type="hidden" value="<?php echo $online; ?>" name="online" id="online" required>
                     <input type="hidden" value="1" name="moneda" id="moneda" required>
-                    <input type="hidden" class="form-control input-sm" value="<?php echo $dolar; ?>" name="tcp" id="tcp" required>
+                    <input type="hidden" class="form-control input-sm" value="<?php echo $dolar; ?>" name="tcp" id="tcp"
+                      required>
 
                     <div class="col-md-2 col-sm-4 col-xs-12">Cotizacion:
-                      <input autocomplete="off" type="text" value="<?php echo $oc; ?>" class="form-control cuadrosdetextocentro" id="motivo" name="motivo" placeholder="Doc Cotización">
+                      <input autocomplete="off" type="text" value="<?php echo $oc; ?>"
+                        class="form-control cuadrosdetextocentro" id="motivo" name="motivo"
+                        placeholder="Doc Cotización">
                     </div>
 
                     <div class="col-md-2 col-sm-4 col-xs-12"> Pago:
@@ -521,16 +533,17 @@ if ($folio <> "" and $numero_factura > 0) {
                         <option value="5">Tarjeta</option>
                         <?php
                         if ($_SESSION['doc_ventas'] < 5) {
-                        ?>
+                          ?>
                           <option value="4">Crédito</option>
-                        <?php
+                          <?php
                         }
                         ?>
                       </select>
                     </div>
 
                     <div class="col-md-2 col-sm-4 col-xs-12"> Nro dias crédito
-                      <input autocomplete="off" type="text" value="0" class="form-control cuadrosdetextocentro" id="dias" name="dias" placeholder="Número de días de crédito">
+                      <input autocomplete="off" type="text" value="0" class="form-control cuadrosdetextocentro"
+                        id="dias" name="dias" placeholder="Número de días de crédito">
                     </div>
                     <div class="col-md-2 col-sm-4 col-xs-12"> Vendedor
                       <select id="id_vendedor" style="color:black;" class="form-control cuadrosdetextoderecha">
@@ -544,9 +557,10 @@ if ($folio <> "" and $numero_factura > 0) {
                           } else {
                             $selected = "";
                           }
-                        ?>
-                          <option value="<?php echo $id_vendedor ?>" <?php echo $selected; ?>><?php echo $nombre_vendedor ?></option>
-                        <?php
+                          ?>
+                          <option value="<?php echo $id_vendedor ?>" <?php echo $selected; ?>>
+                            <?php echo $nombre_vendedor ?></option>
+                          <?php
                         }
                         ?>
                       </select>
@@ -557,17 +571,26 @@ if ($folio <> "" and $numero_factura > 0) {
                     <div class="col-md-1 col-sm-6 col-xs-12">
                       <div class="css-button-6">
                         <span class="css-button-6-text">Paga con:</span>
-                        <input name="paga_con" style="background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);color:black;box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);text-align:center;height:50px;font-size: 14pt; border-radius: 20px;" autocomplete="off" type="search" onchange="sumar1();" class="form-control input-sm" id="pagado">
+                        <input name="paga_con"
+                          style="background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);color:black;box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);text-align:center;height:50px;font-size: 14pt; border-radius: 20px;"
+                          autocomplete="off" type="search" onchange="sumar1();" class="form-control input-sm"
+                          id="pagado">
 
                       </div>
                     </div>
                     <div class="col-md-1 col-sm-6 col-xs-12">Vuelto
-                      <div style="background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); color:black;box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);text-align:center;height:50px;padding:8px;font-size:14pt; border-radius: 20px;" id="vuelto"></div>
+                      <div
+                        style="background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); color:black;box-shadow: inset 0px 1px 8px rgba(0, 0, 0, 0.2);text-align:center;height:50px;padding:8px;font-size:14pt; border-radius: 20px;"
+                        id="vuelto"></div>
                     </div>
 
                     <div class="pull-right">
-                      <button type="button" class="css-button-5" data-toggle="modal" data-target="#myModal1"> <span class="css-button-3-icon"><i class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true" id="i_pos"></i></span><span class="css-button-3-text">Servicio</span></button>
-                      <button type="submit" class="css-button-3"> <span class="css-button-3-icon"><i class="glyphicon glyphicon-print" aria-hidden="true" id="i_pos"></i></span><span class="css-button-3-text">Imprimir</span></button>
+                      <button type="button" class="css-button-5" data-toggle="modal" data-target="#myModal1"> <span
+                          class="css-button-3-icon"><i class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"
+                            id="i_pos"></i></span><span class="css-button-3-text">Servicio</span></button>
+                      <button type="submit" class="css-button-3"> <span class="css-button-3-icon"><i
+                            class="glyphicon glyphicon-print" aria-hidden="true" id="i_pos"></i></span><span
+                          class="css-button-3-text">Imprimir</span></button>
                     </div>
                   </div>
                   <div class="form-group row">
@@ -581,10 +604,24 @@ if ($folio <> "" and $numero_factura > 0) {
                 <table class="table">
                   <tr style="background:#001394;color:black;">
                     <td style="width:70%;">
-                      <input type="search" autocomplete="off" class="busca" id="caja_busqueda" name="clave" placeholder="Buscar nombre o codigo producto" /><br />
+                      <input type="search" autocomplete="off" class="busca" id="caja_busqueda" name="clave"
+                        placeholder="Buscar nombre o codigo producto" /><br />
                       <div id="display" style="position: absolute;"></div>
                     </td>
-                    <td style="width:30%;"><input type="hidden" id="q5" placeholder="Codigo barras" onkeyup="Lector(this.value);"></td>
+                    <td style="width:30%;">
+                      <div class="input-group" style="margin-bottom: 0;">
+                        <span class="input-group-addon" style="background-color: #f8f9fa; border-color: #ced4da;"><i
+                            class="fa fa-barcode"></i></span>
+                        <input type="text" class="form-control" id="q5" placeholder="Escanear código de barras..."
+                          autofocus onkeypress="if(event.keyCode==13){ Lector(this.value); return false; }">
+                        <span class="input-group-btn">
+                          <button type="button" class="btn btn-success" id="btn-camara" data-toggle="modal"
+                            data-target="#modalCamara" title="Escanear con cámara">
+                            <i class="fa fa-camera"></i>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
                   </tr>
                 </table>
                 <div id="resultados" style="width:100%;"></div>
@@ -614,18 +651,18 @@ if ($folio <> "" and $numero_factura > 0) {
   <script src="js/icheck/icheck.min.js"></script>
   <script src="js/custom.js"></script>
   <!-- <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
   <script src="js/pace/pace.min.js"></script>
   <link rel="stylesheet" href="css/jquery-ui.css">
   <script src="js/jquery-ui.js"></script>
   <script type="text/javascript" src="js/VentanaCentrada.js"></script>
   <script>
-    $(function() {
+    $(function () {
       $("#doc1").autocomplete({
         source: "./ajax/autocomplete/clientes1.php",
         minLength: 1,
-        select: function(event, ui) {
+        select: function (event, ui) {
           event.preventDefault();
           $('#id_cliente').val(ui.item.id_cliente);
           $('#nombre_cliente').val(ui.item.nombre_cliente);
@@ -640,7 +677,7 @@ if ($folio <> "" and $numero_factura > 0) {
 
     });
 
-    $("#doc1").on("keydown", function(event) {
+    $("#doc1").on("keydown", function (event) {
       if (event.keyCode == $.ui.keyCode.LEFT || event.keyCode == $.ui.keyCode.RIGHT || event.keyCode == $.ui.keyCode.UP || event.keyCode == $.ui.keyCode.DOWN || event.keyCode == $.ui.keyCode.DELETE || event.keyCode == $.ui.keyCode.BACKSPACE) {
         $("#id_cliente").val("");
         $("#nombre_cliente").val("");
@@ -659,11 +696,11 @@ if ($folio <> "" and $numero_factura > 0) {
       }
     });
 
-    $(function() {
+    $(function () {
       $("#nombre_cliente").autocomplete({
         source: "./ajax/autocomplete/clientes.php",
         minLength: 1,
-        select: function(event, ui) {
+        select: function (event, ui) {
           event.preventDefault();
           $('#id_cliente').val(ui.item.id_cliente);
           $('#nombre_cliente').val(ui.item.nombre_cliente);
@@ -678,7 +715,7 @@ if ($folio <> "" and $numero_factura > 0) {
 
     });
 
-    $("#nombre_cliente").on("keydown", function(event) {
+    $("#nombre_cliente").on("keydown", function (event) {
       if (event.keyCode == $.ui.keyCode.LEFT || event.keyCode == $.ui.keyCode.RIGHT || event.keyCode == $.ui.keyCode.UP || event.keyCode == $.ui.keyCode.DOWN || event.keyCode == $.ui.keyCode.DELETE || event.keyCode == $.ui.keyCode.BACKSPACE) {
         $("#id_cliente").val("");
         $("#tel1").val("");
@@ -698,7 +735,7 @@ if ($folio <> "" and $numero_factura > 0) {
 
 
 
-    $(document).ready(function() {
+    $(document).ready(function () {
       load(1);
       $("#resultados").load("ajax/agregar_facturacion.php");
     });
@@ -708,10 +745,10 @@ if ($folio <> "" and $numero_factura > 0) {
       $("#loader").fadeIn('slow');
       $.ajax({
         url: './ajax/productos_factura.php?action=ajax&page=' + page + '&q=' + q,
-        beforeSend: function(objeto) {
+        beforeSend: function (objeto) {
           $('#loader').html('<img src="./img/ajax-loader.gif"> Cargando...');
         },
-        success: function(data) {
+        success: function (data) {
           $(".outer_div").html(data).fadeIn('slow');
           $('#loader').html('');
 
@@ -731,10 +768,10 @@ if ($folio <> "" and $numero_factura > 0) {
         type: "POST",
         url: "./ajax/agregar_facturacion.php",
         data: "id=" + id + "&precio_venta=" + precio_venta + "&cantidad=" + cantidad + "&stock=" + stock,
-        beforeSend: function(objeto) {
+        beforeSend: function (objeto) {
           $("#resultados").html("Mensaje: Cargando...");
         },
-        success: function(datos) {
+        success: function (datos) {
           $("#resultados").html(datos);
         }
       });
@@ -758,10 +795,10 @@ if ($folio <> "" and $numero_factura > 0) {
         type: "POST",
         url: "./ajax/agregar_facturacion.php",
         data: "id=" + id + "&precio_venta=" + precio_venta + "&cantidad=" + cantidad + "&stock=" + stock,
-        beforeSend: function(objeto) {
+        beforeSend: function (objeto) {
           $("#resultados").html("Mensaje: Cargando...");
         },
-        success: function(datos) {
+        success: function (datos) {
           $("#resultados").html(datos);
         }
       });
@@ -779,10 +816,10 @@ if ($folio <> "" and $numero_factura > 0) {
         type: "POST",
         url: "./ajax/agregar_facturacion.php",
         data: "id1=" + id1,
-        beforeSend: function(objeto) {
+        beforeSend: function (objeto) {
           $("#resultados").html("Mensaje: Cargando...");
         },
-        success: function(datos) {
+        success: function (datos) {
           $("#resultados").html(datos);
         }
       });
@@ -823,45 +860,36 @@ if ($folio <> "" and $numero_factura > 0) {
         type: "POST",
         url: "./ajax/agregar_facturacion.php",
         data: "id=" + id + "&precio_venta=" + precio_venta + "&cantidad=" + cantidad + "&stock=" + stock,
-        beforeSend: function(objeto) {
+        beforeSend: function (objeto) {
           $("#resultados").html("Mensaje: Cargando...");
         },
-        success: function(datos) {
+        success: function (datos) {
           $("#resultados").html(datos);
         }
       });
     }
 
     function Lector(n) {
-
+      if (n.trim() === "") {
+        return;
+      }
       $.ajax({
         type: "POST",
         url: "./ajax/productos_factura1.php",
         data: "barra=" + n,
-        beforeSend: function(objeto) {
+        beforeSend: function (objeto) {
           $("#resultados").html("Mensaje: Cargando...");
         },
-
+        success: function () {
+          blanco();
+        }
       });
-      //valor=n.length;
-      //if(valor>=12) {
-
-      setTimeout(blanco, 1200);
-      // setTimeout(blanco(),13500);
-
-
-
-      //}
-
     }
 
     function blanco() {
-
-
       document.getElementById("q5").value = "";
+      document.getElementById("q5").focus();
       $("#resultados").load("ajax/agregar_facturacion.php");
-
-
     }
 
 
@@ -871,17 +899,17 @@ if ($folio <> "" and $numero_factura > 0) {
         type: "GET",
         url: "./ajax/agregar_facturacion.php",
         data: "id=" + id,
-        beforeSend: function(objeto) {
+        beforeSend: function (objeto) {
           $("#resultados").html("Mensaje: Cargando...");
         },
-        success: function(datos) {
+        success: function (datos) {
           $("#resultados").html(datos);
         }
       });
 
     }
 
-    $("#datos_factura").submit(function() {
+    $("#datos_factura").submit(function () {
       var id_cliente = $("#id_cliente").val();
       var id_vendedor = $("#id_vendedor").val();
       var condiciones = $("#condiciones").val();
@@ -921,7 +949,7 @@ if ($folio <> "" and $numero_factura > 0) {
 
     });
 
-    $("#guardar_cliente").submit(function(event) {
+    $("#guardar_cliente").submit(function (event) {
       $('#guardar_datos').attr("disabled", true);
 
       var parametros = $(this).serialize();
@@ -929,10 +957,10 @@ if ($folio <> "" and $numero_factura > 0) {
         type: "POST",
         url: "ajax/nuevo_cliente.php",
         data: parametros,
-        beforeSend: function(objeto) {
+        beforeSend: function (objeto) {
           $("#resultados_ajax").html("Mensaje: Cargando...");
         },
-        success: function(datos) {
+        success: function (datos) {
           $("#resultados_ajax").html(datos);
           $('#guardar_datos').attr("disabled", false);
           load(1);
@@ -941,7 +969,7 @@ if ($folio <> "" and $numero_factura > 0) {
       event.preventDefault();
     })
 
-    $("#guardar_producto").submit(function(event) {
+    $("#guardar_producto").submit(function (event) {
       $('#guardar_datos').attr("disabled", true);
 
       var parametros = $(this).serialize();
@@ -949,10 +977,10 @@ if ($folio <> "" and $numero_factura > 0) {
         type: "POST",
         url: "ajax/nuevo_producto.php",
         data: parametros,
-        beforeSend: function(objeto) {
+        beforeSend: function (objeto) {
           $("#resultados_ajax_productos").html("Mensaje: Cargando...");
         },
-        success: function(datos) {
+        success: function (datos) {
           $("#resultados_ajax_productos").html(datos);
           $('#guardar_datos').attr("disabled", false);
           load(1);
@@ -961,16 +989,16 @@ if ($folio <> "" and $numero_factura > 0) {
       event.preventDefault();
     })
 
-    $(document).on('ready', function() {
+    $(document).on('ready', function () {
 
-      $('#btn-ingresar').click(function() {
+      $('#btn-ingresar').click(function () {
         var url = "busqueda.php";
 
         $.ajax({
           type: "POST",
           url: url,
           data: $("#datos_factura").serialize(),
-          success: function(data) {
+          success: function (data) {
             $('#doc1').html(data);
 
             porciones = data.split('|');
@@ -988,25 +1016,25 @@ if ($folio <> "" and $numero_factura > 0) {
   </script>
 
   <script language="javascript">
-    $(document).ready(function() {
-      $("#tip_doc").on('change', function() {
-        $("#tip_doc option:selected").each(function() {
+    $(document).ready(function () {
+      $("#tip_doc").on('change', function () {
+        $("#tip_doc option:selected").each(function () {
           elegido = $(this).val();
           $.post("modelo.php", {
             elegido: elegido
-          }, function(data) {
+          }, function (data) {
             $("#tipo_doc1").html(data);
           });
         });
       });
     });
-    $(document).ready(function() {
-      $("#tipo_doc1").on('change', function() {
-        $("#tipo_doc1 option:selected").each(function() {
+    $(document).ready(function () {
+      $("#tipo_doc1").on('change', function () {
+        $("#tipo_doc1 option:selected").each(function () {
           elegido = $(this).val();
           $.post("modelo1.php", {
             elegido: elegido
-          }, function(data) {
+          }, function (data) {
             $("#tip").html(data);
           });
         });
@@ -1024,8 +1052,8 @@ if ($folio <> "" and $numero_factura > 0) {
       document.getElementById('vuelto').innerHTML = r1.toFixed(2);
     }
 
-    $(function() {
-      $("#condiciones").change(function() {
+    $(function () {
+      $("#condiciones").change(function () {
 
 
         if ($(this).val() === "1") {
@@ -1048,6 +1076,72 @@ if ($folio <> "" and $numero_factura > 0) {
       handle: ".modal-header"
     });
   </script>
+  </script>
+
+  <!-- Modal para escanear con cámara -->
+  <div class="modal fade" id="modalCamara" tabindex="-1" role="dialog" aria-labelledby="modalCamaraLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background:#001394; color:white;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar" style="color:white;"><span
+              aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="modalCamaraLabel"><i class="fa fa-camera"></i> Escanear con Cámara</h4>
+        </div>
+        <div class="modal-body" style="padding:10px;">
+          <div id="reader" style="width:100%;"></div>
+          <div id="scan-result"
+            style="margin-top:10px; text-align:center; font-size:16px; font-weight:bold; color:#088A08;"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- html5-qrcode para escanear con cámara del teléfono -->
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <script>
+    var html5QrcodeScanner = null;
+
+    $('#modalCamara').on('shown.bs.modal', function () {
+      if (html5QrcodeScanner) {
+        html5QrcodeScanner.clear();
+      }
+      html5QrcodeScanner = new Html5QrcodeScanner("reader", {
+        fps: 10,
+        qrbox: { width: 250, height: 150 },
+        formatsToSupport: [
+          Html5QrcodeSupportedFormats.EAN_13,
+          Html5QrcodeSupportedFormats.EAN_8,
+          Html5QrcodeSupportedFormats.CODE_128,
+          Html5QrcodeSupportedFormats.CODE_39,
+          Html5QrcodeSupportedFormats.UPC_A,
+          Html5QrcodeSupportedFormats.UPC_E,
+          Html5QrcodeSupportedFormats.QR_CODE
+        ]
+      });
+      html5QrcodeScanner.render(function onScanSuccess(decodedText, decodedResult) {
+        // Código detectado
+        $('#scan-result').html('<i class="fa fa-check-circle"></i> Código: ' + decodedText);
+        Lector(decodedText);
+        // Detener escáner y cerrar modal tras 1 segundo
+        setTimeout(function () {
+          html5QrcodeScanner.clear();
+          $('#modalCamara').modal('hide');
+          $('#scan-result').html('');
+        }, 1000);
+      }, function onScanError(errorMessage) {
+        // Ignorar errores de escaneo (ocurren constantemente mientras busca)
+      });
+    });
+
+    $('#modalCamara').on('hidden.bs.modal', function () {
+      if (html5QrcodeScanner) {
+        try { html5QrcodeScanner.clear(); } catch (e) { }
+      }
+      document.getElementById('q5').focus();
+    });
   </script>
 </body>
 

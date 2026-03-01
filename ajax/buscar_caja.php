@@ -9,8 +9,8 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 	if($action == 'ajax'){
 	$tienda=$_SESSION['tienda'];	// escaping, additionally removing everything that could be (html/javascript-) code
          $user_id=$_SESSION['user_id'];
-        $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-        $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'], ENT_QUOTES)));
+        $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
+        $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'])));
 		 $aColumns = array('nom_cat');//Columnas de busqueda
 		 $sTable = "caja";
                  $sWhere = "";

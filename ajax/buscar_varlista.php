@@ -42,7 +42,7 @@ border-bottom: 2px solid #A9E2F3;
 		}
         }
 	if($action == 'ajax'){
-                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
+                $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
                 $sTable = "asistencia,users,laborales";
                 $sWhere = "";
                  $sWhere.=" WHERE users.sucursal=$tienda1 and asistencia.asistencia=laborales.id_laboral and asistencia.user_id=users.user_id $dato";

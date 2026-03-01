@@ -16,12 +16,12 @@
 		){
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
-		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"],ENT_QUOTES)));
-		$telefono=mysqli_real_escape_string($con,(strip_tags($_POST["mod_telefono"],ENT_QUOTES)));
-		$email=mysqli_real_escape_string($con,(strip_tags($_POST["mod_email"],ENT_QUOTES)));
-		$direccion=mysqli_real_escape_string($con,(strip_tags($_POST["mod_direccion"],ENT_QUOTES)));
-                $doc=mysqli_real_escape_string($con,(strip_tags($_POST["mod_doc"],ENT_QUOTES)));
-                $tipo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_tipo"],ENT_QUOTES)));
+		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"])));
+		$telefono=mysqli_real_escape_string($con,(strip_tags($_POST["mod_telefono"])));
+		$email=mysqli_real_escape_string($con,(strip_tags($_POST["mod_email"])));
+		$direccion=mysqli_real_escape_string($con,(strip_tags($_POST["mod_direccion"])));
+                $doc=mysqli_real_escape_string($con,(strip_tags($_POST["mod_doc"])));
+                $tipo=mysqli_real_escape_string($con,(strip_tags($_POST["mod_tipo"])));
                 if($tipo==2){
                     $doc1=$doc;
                     $dni=0;
@@ -32,11 +32,11 @@
                 }
                 $documento=$doc;
                 
-                $ven=mysqli_real_escape_string($con,(strip_tags($_POST["mod_ven"],ENT_QUOTES)));
-                $departamento=mysqli_real_escape_string($con,(strip_tags($_POST["mod_departamento"],ENT_QUOTES)));
-                $provincia=mysqli_real_escape_string($con,(strip_tags($_POST["mod_provincia"],ENT_QUOTES)));
-                $distrito=mysqli_real_escape_string($con,(strip_tags($_POST["mod_distrito"],ENT_QUOTES)));
-                $cuenta=mysqli_real_escape_string($con,(strip_tags($_POST["mod_cuenta"],ENT_QUOTES)));
+                $ven=mysqli_real_escape_string($con,(strip_tags($_POST["mod_ven"])));
+                $departamento=mysqli_real_escape_string($con,(strip_tags($_POST["mod_departamento"])));
+                $provincia=mysqli_real_escape_string($con,(strip_tags($_POST["mod_provincia"])));
+                $distrito=mysqli_real_escape_string($con,(strip_tags($_POST["mod_distrito"])));
+                $cuenta=mysqli_real_escape_string($con,(strip_tags($_POST["mod_cuenta"])));
                 $estado=intval($_POST['mod_estado']);
 		$id_cliente=intval($_POST['mod_id']);
 		$sql="UPDATE clientes SET nombre_cliente='".$nombre."', telefono_cliente='".$telefono."', email_cliente='".$email."', direccion_cliente='".$direccion."', status_cliente='".$estado."', vendedor='".$ven."', departamento='".$departamento."', provincia='".$provincia."', distrito='".$distrito."', cuenta='".$cuenta."', documento='".$documento."' WHERE id_cliente='".$id_cliente."'";

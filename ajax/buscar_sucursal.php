@@ -48,7 +48,7 @@ border-bottom: 2px solid #A9E2F3;
 		}
 	}
 	if($action == 'ajax'){
-            $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
+            $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
 		 $aColumns = array('nombre');//Columnas de busqueda
 		 $sTable = "sucursal";
 		 $sWhere = "";

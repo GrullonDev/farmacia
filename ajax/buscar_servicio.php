@@ -36,8 +36,8 @@
         }
 	if($action == 'ajax'){
 	
-        $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-        $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'], ENT_QUOTES)));
+        $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
+        $q1 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q1'])));
         $aColumns = array('cod_servicio', 'nom_servicio');//Columnas de busqueda
         $sTable = "servicios";
         $sWhere = "";

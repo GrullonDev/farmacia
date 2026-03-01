@@ -9,18 +9,18 @@
 		
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
-                $id=mysqli_real_escape_string($con,(strip_tags($_POST["mod_id"],ENT_QUOTES)));
-                $numero_factura=mysqli_real_escape_string($con,(strip_tags($_POST["numero_factura"],ENT_QUOTES)));
-                $estado_factura=mysqli_real_escape_string($con,(strip_tags($_POST["estado_factura"],ENT_QUOTES)));
-		$pago=mysqli_real_escape_string($con,(strip_tags($_POST["mod_pago"],ENT_QUOTES)));
-                $obs=mysqli_real_escape_string($con,(strip_tags($_POST["mod_obs"],ENT_QUOTES)));
-                $condiciones=mysqli_real_escape_string($con,(strip_tags($_POST["condiciones"],ENT_QUOTES)));
+                $id=mysqli_real_escape_string($con,(strip_tags($_POST["mod_id"])));
+                $numero_factura=mysqli_real_escape_string($con,(strip_tags($_POST["numero_factura"])));
+                $estado_factura=mysqli_real_escape_string($con,(strip_tags($_POST["estado_factura"])));
+		$pago=mysqli_real_escape_string($con,(strip_tags($_POST["mod_pago"])));
+                $obs=mysqli_real_escape_string($con,(strip_tags($_POST["mod_obs"])));
+                $condiciones=mysqli_real_escape_string($con,(strip_tags($_POST["condiciones"])));
                 $dolar1=mysqli_query($con, "SELECT*FROM datosempresa WHERE id_emp=1");
                 $row1=mysqli_fetch_array($dolar1);
                 $dolar=$row1['dolar'];   
                 $moneda=$_POST["mod_mon"];
                 $mon1=$dolar;
-                $cliente=mysqli_real_escape_string($con,(strip_tags($_POST["mod_cliente"],ENT_QUOTES)));
+                $cliente=mysqli_real_escape_string($con,(strip_tags($_POST["mod_cliente"])));
                 $vendedor=$_SESSION['user_id'];
                 $tienda=$_SESSION['tienda'];
                 date_default_timezone_set('America/Lima');

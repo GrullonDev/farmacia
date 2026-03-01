@@ -9,7 +9,7 @@
         }
 	if($action == 'ajax'){
 	
-        $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
+        $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
        
         $sTable = "products,detalle_factura";
         $sWhere=" WHERE detalle_factura.id_producto=products.id_producto and detalle_factura.tienda=$tienda1 and detalle_factura.folio='7777'";

@@ -69,7 +69,7 @@
 	}
 	if($action == 'ajax'){
 		// escaping, additionally removing everything that could be (html/javascript-) code
-         //$q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
+         //$q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
 		 $aColumns = array('tipo');//Columnas de busqueda
 		 $sTable = "tipo";
 		 $sWhere = "";

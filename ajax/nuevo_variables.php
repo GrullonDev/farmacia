@@ -11,10 +11,10 @@
 		){
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
-		$variables=mysqli_real_escape_string($con,(strip_tags($_POST["variables"],ENT_QUOTES)));
-		$des_var=mysqli_real_escape_string($con,(strip_tags($_POST["des_var"],ENT_QUOTES)));
-		$cod_var=mysqli_real_escape_string($con,(strip_tags($_POST["cod_var"],ENT_QUOTES)));
-                $col_var=mysqli_real_escape_string($con,(strip_tags($_POST["col_var"],ENT_QUOTES)));
+		$variables=mysqli_real_escape_string($con,(strip_tags($_POST["variables"])));
+		$des_var=mysqli_real_escape_string($con,(strip_tags($_POST["des_var"])));
+		$cod_var=mysqli_real_escape_string($con,(strip_tags($_POST["cod_var"])));
+                $col_var=mysqli_real_escape_string($con,(strip_tags($_POST["col_var"])));
 		$sql="INSERT INTO laborales (cod_var,variables,des_var,col_var) VALUES ('$cod_var','$variables','$des_var','$col_var')";
 		$query_new_insert = mysqli_query($con,$sql);
 			if ($query_new_insert){

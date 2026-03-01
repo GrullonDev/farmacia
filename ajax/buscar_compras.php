@@ -108,9 +108,9 @@ require_once ("../config/db.php");
 		}
 	}
 	if($action == 'ajax'){
-        $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-        $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'], ENT_QUOTES)));
-        $q3 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q3'], ENT_QUOTES)));
+        $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
+        $q2 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q2'])));
+        $q3 = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q3'])));
 		$sTable = "facturas, clientes, users";
 		$sWhere = "";
 		$sWhere.=" WHERE facturas.id_cliente=clientes.id_cliente and facturas.id_vendedor=users.user_id and ven_com=2 and activo=1 and facturas.tienda=$tienda1";

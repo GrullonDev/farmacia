@@ -12,8 +12,8 @@
 		){
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
-		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"],ENT_QUOTES)));
-		$variable=mysqli_real_escape_string($con,(strip_tags($_POST["mod_cod_var"],ENT_QUOTES)));
+		$nombre=mysqli_real_escape_string($con,(strip_tags($_POST["mod_nombre"])));
+		$variable=mysqli_real_escape_string($con,(strip_tags($_POST["mod_cod_var"])));
                 $fecha_entrada=$_POST["mod_fecha_entrada"];
                 $asistencia1=0;
                 $accion1=mysqli_query($con, "select * from asistencia where fecha_entrada='".$fecha_entrada."' and user_id='".$nombre."'");

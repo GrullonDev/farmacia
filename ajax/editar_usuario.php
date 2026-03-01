@@ -24,9 +24,9 @@
          {
             require_once ("../config/db.php");
             require_once ("../config/conexion.php");
-            $firstname = mysqli_real_escape_string($con,(strip_tags($_POST["firstname2"],ENT_QUOTES)));
-            $user_name = mysqli_real_escape_string($con,(strip_tags($_POST["user_name2"],ENT_QUOTES)));
-            $user_email = mysqli_real_escape_string($con,(strip_tags($_POST["user_email2"],ENT_QUOTES)));
+            $firstname = mysqli_real_escape_string($con,(strip_tags($_POST["firstname2"])));
+            $user_name = mysqli_real_escape_string($con,(strip_tags($_POST["user_name2"])));
+            $user_email = mysqli_real_escape_string($con,(strip_tags($_POST["user_email2"])));
             $user_id=intval($_POST['mod_id']);
             $sucursal = $_POST['mod_sucursal'];
             $dni=$_POST['mod_dni'];

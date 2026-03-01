@@ -11,7 +11,7 @@
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
 
-		$tipo=mysqli_real_escape_string($con,(strip_tags($_POST["equipo"],ENT_QUOTES)));
+		$tipo=mysqli_real_escape_string($con,(strip_tags($_POST["equipo"])));
 
 		$sql="INSERT INTO tipo (tipo) VALUES ('$tipo')";
 		$query_new_insert = mysqli_query($con,$sql);

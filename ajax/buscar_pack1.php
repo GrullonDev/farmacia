@@ -43,7 +43,7 @@
 		// escaping, additionally removing everything that could be (html/javascript-) code
           
           
-         $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
+         $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'])));
 		 
 		 $sTable = "pack,products,und";
 		 $sWhere = "";

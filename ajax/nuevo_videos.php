@@ -11,10 +11,10 @@
 		require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 		require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
 		// escaping, additionally removing everything that could be (html/javascript-) code
-		$menu=mysqli_real_escape_string($con,(strip_tags($_POST["menu"],ENT_QUOTES)));
-                $submenu=mysqli_real_escape_string($con,(strip_tags($_POST["submenu"],ENT_QUOTES)));
-                $descripcion=mysqli_real_escape_string($con,(strip_tags($_POST["descripcion"],ENT_QUOTES)));
-                $video=mysqli_real_escape_string($con,(strip_tags($_POST["video"],ENT_QUOTES)));
+		$menu=mysqli_real_escape_string($con,(strip_tags($_POST["menu"])));
+                $submenu=mysqli_real_escape_string($con,(strip_tags($_POST["submenu"])));
+                $descripcion=mysqli_real_escape_string($con,(strip_tags($_POST["descripcion"])));
+                $video=mysqli_real_escape_string($con,(strip_tags($_POST["video"])));
                 
                 
                 $sql="INSERT INTO video (menu, submenu, descripcion,video) VALUES ('$menu','$submenu','$descripcion','$video')";

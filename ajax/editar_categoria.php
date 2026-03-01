@@ -11,8 +11,8 @@
 		){
 		require_once ("../config/db.php");
 		require_once ("../config/conexion.php");
-		$categoria=mysqli_real_escape_string($con,(strip_tags($_POST["mod_cat"],ENT_QUOTES)));
-		$des=mysqli_real_escape_string($con,(strip_tags($_POST["mod_des"],ENT_QUOTES)));
+		$categoria=mysqli_real_escape_string($con,(strip_tags($_POST["mod_cat"])));
+		$des=mysqli_real_escape_string($con,(strip_tags($_POST["mod_des"])));
                 $id_categoria=$_POST['mod_id'];
 		$sql="UPDATE categorias SET nom_cat='".$categoria."',des_cat='".$des."'WHERE id_categoria='".$id_categoria."'";
 		$query_update = mysqli_query($con,$sql);
